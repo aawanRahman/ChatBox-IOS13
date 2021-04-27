@@ -12,11 +12,23 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    
     override func viewDidLoad() {
+        titleLabel.text = ""
+        let title = "⚡️FlashChat"
+        var index = 0.0
         super.viewDidLoad()
+        
+        for letter in title {
+            
+            Timer.scheduledTimer(withTimeInterval: 0.2 * index, repeats: false) { timer in
+                self.titleLabel.text?.append(letter)
+            }
+            index += 1
 
        
-    }
+       }
     
 
+    }
 }
